@@ -2537,7 +2537,7 @@ A less trivial example of this usage, tracing tcp state changes, and printing th
 address:
 
 ```
-bpftrace -e 'tracepoint:tcp:tcp_set_state { printf("%s\n", ntop(args->daddr_v6)) }'
+bpftrace -e 'tracepoint:sock:inet_sock_set_state { printf("%s\n", ntop(args->daddr_v6)) }'
 Attaching 1 probe...
 ::ffff:216.58.194.164
 ::ffff:216.58.194.164
